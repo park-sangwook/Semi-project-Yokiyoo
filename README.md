@@ -53,4 +53,5 @@ let swiper = new Swiper(".mySwiper", {
   결제시스템을 도입하여 프로젝트의 완성도를 높이고자 하였지만 난이도가 어려워 도입하지 못한점이 아쉬웠습니다.
   메인페이지에서 검색버튼을 눌렀을때 주소를 입력하는 폼이 나오는데,
   실제 요기요 서비스에서는 주소를 입력하는 input태그에서 비동기로 관련된 주소를 보여주는 기술을 적용시키지 못한게 아쉬웠습니다.
+  
   <img src="https://github.com/user-attachments/assets/fc64ee82-3702-410e-abab-a4e091ce5385" />
