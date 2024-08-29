@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko" xmlns:th="www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>요기요</title>
+	<link rel="icon" type="image/x-icon" href="https://www.yogiyo.co.kr/mobile/image/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=JavaScriptKey&libraries=services&autoload=false"></script>
+	<script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="/css/footer.css">
+	<script defer src="/js/index.js"></script>
+	<script defer src="/js/gps.js"></script>
+</head>
+<body>
+	<div th:replace="~{layout/header}"></div>
+	<div class="yokiyoo-logo">
+		<div class="logo-group">
+			<div class="gps-image"><div id="map" style="width:100%;height:400px;"></div></div>
+			<div class="showLocation"></div>
+			<button class="search-btn">검색</button>
+		</div>
+	</div>
+	<main>
+		<div class="main-wrapper">
+			<div class="item">
+				<div class="item-title">전체보기</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-01.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">1인분 주문</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-onedish.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">프랜차이즈</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-10.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">치킨</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-02.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">피자/양식</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-03.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">중국집</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-04.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">한식</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-05.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">일식/돈까스</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-06.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">족발/보쌈</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-07.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">야식</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-08.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">분식</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-09.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">카페/디저트</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-11.png" alt="">
+			</div>
+			<div class="item">
+				<div class="item-title">편의점/마트</div>
+				<img src="https://www.yogiyo.co.kr/mobile/image/category-convenience-store.png" alt="">
+			</div>
+		</div>
+	</main>
+	<div th:replace="~{layout/footer}"></div>
+</body>
+</html>

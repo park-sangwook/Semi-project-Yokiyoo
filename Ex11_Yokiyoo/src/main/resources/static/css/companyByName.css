@@ -1,0 +1,387 @@
+.company-logo{
+	padding: 30px 100px;
+	background-image: url(https://www.yogiyo.co.kr/mobile/image/bg-top.png?v=1);
+	background-color: #3b2114;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 50px;
+}
+.restaurant-wrapper{
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+.restaurant-menu{
+	width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+.restaurant-menu .restaurant-item:first-child{
+	background: url(https://www.yogiyo.co.kr/mobile/image/sprite-icon.png?v=8cf7ee7…) no-repeat -73px 0;
+    border: 1px solid #d9d9d9;
+    background-size: 368px;
+    width: 42px;
+    text-indent: -999em;
+    height: 5px;
+	padding: 15px 0;
+}
+.restaurant-menu .restaurant-item{
+	position: relative;
+	font-size: 13px;
+	text-align: center;
+	list-style: none;
+	border-right: 0;
+	border-bottom: 0;
+	width: 100px;
+	padding: 20px 0;
+	cursor: pointer;
+}
+.restaurant-menu .restaurant-item:hover{
+	background-color: #333;
+	color: #fff;
+}
+.restaurant-menu .restaurant-item::before{
+	content: "";
+	width: 1px;
+	height: 14px;
+	background-color: #999;
+	position: absolute;
+	left:-1px;
+}
+.restaurant-menu .restaurant-item:first-child:before{
+	display: none;
+}
+
+
+.main-wrapper{
+	width: 1100px;
+	margin: 10px auto;
+	display: flex;
+	column-gap: 10px;
+}
+.main-wrapper .restaurant-info{
+	background-color: #fff;
+	width: 65%;
+    border: 1px solid #d9d9d9;
+}
+.main-wrapper .restaurant-title{
+	padding: 10px;
+    font-size: 110%;
+    border-bottom: 1px solid #d9d9d9;
+}
+.main-wrapper .pay-info{
+	width: 40%;
+}
+.main-wrapper .pay-info .sub-title{
+	background-color: #333;
+    color: #fff;
+    font-size: 110%;
+    padding: 10px 10px 10px 15px;
+}
+.main-wrapper .pay-info .sub-body{
+	background: #fff;
+    text-align: center;
+    padding: 35px 0;
+    border: 1px solid #d9d9d9;
+}
+.main-wrapper .pay-btn{
+	width: 100%;
+	height: 46px;
+    color: #fff;
+    background-color: #fa0050;
+    border-color: #fa0050;
+	border: none;
+}
+.info-group{
+	display: flex;
+	padding: 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #d9d9d9;
+}
+.info-group>img{
+	width: 85px;
+}
+.alarm{
+	font-size: .8em;
+	font-weight: bold;
+	padding: 10px;
+}
+.alarm img{
+	position: relative;
+	top: 5px;
+	width: 25px;
+}
+.menu-list{
+	position: relative;
+	display: flex;
+	border: 1px solid #d9d9d9;
+    border-left: 0;
+    margin: 10px 0 0 0;
+    padding-bottom: 1px;
+	width: 100%;
+	cursor: pointer;
+}
+.menu-list li{
+	width: 33%;
+	font-size: 110%;
+    background: #fff !important;
+    border-left: 1px solid #d9d9d9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45px;
+}
+.menu-list li.selected{
+	border: 0;
+    border-bottom: 5px solid #fa0050;
+    color: #fa0050;
+}
+
+
+.swiper {
+	position: absolute;
+	top: 50px;
+	left:0;
+  width: 100%;
+  height: 380%;
+  border: 1px solid #d9d9d9;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 !important;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 138px;
+}
+.swiper-slide .item{
+	display: inline-block;
+    background-color: #fff;
+    border: solid 1px #d9d9d9;
+    text-align:center;
+    width: 140px;
+    margin-right: 8px;
+    padding: 0px;
+    cursor: pointer;
+}
+.swiper-slide div{
+	box-sizing: border-box;
+	padding: 10px 0;
+	color:black;
+	font-size: .9em;
+}
+.swiper-slide h3{
+	font-weight: bold;
+}
+.swiper-button-next{
+	background-image: url(https://www.yogiyo.co.kr/mobile/image/btn-right.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030);
+	background-repeat: no-repeat;
+	width: 35px;
+	height: 35px;
+	background-position: center center;
+	transform: translateX(-2px);
+}
+.swiper-button-prev{
+	background-image: url(https://www.yogiyo.co.kr/mobile/image/btn-left.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030);
+	background-repeat: no-repeat;
+	width: 35px;
+	height: 35px;
+	background-position: center center;
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+	display: none;
+}
+
+.menuDetail{
+	display: none;
+	z-index: 2;
+	position: absolute;
+	width: 384px;
+    left: 35%;
+    top: 105px;
+}
+.menu-content img{
+	width:384px;
+}
+.menuDetail .menu-title{
+	background: #fff;
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+	text-align: center;
+    padding: 20px 0 0 0;
+    z-index: 2;
+}
+.menuDetail .menu-price,.menu-count,.total{
+	display: flex;
+	justify-content: space-between;
+}
+.menuDetail .menu-title img{
+	position: absolute;
+	top: 15px;
+	right:10px;
+	width: 35px;
+	cursor: pointer;
+}
+.menuDetail .menu-detail{
+	background: #efefef;
+    position: absolute;
+    top: 60px;
+    bottom: 48px;
+    overflow-y: auto;
+    width: 100%
+}
+.menuDetail .menu-text{
+	border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.menuDetail .menu-price,.menu-count,.total{
+	background: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 20px 15px 10px 15px;
+}
+.menuDetail .btn-group{
+	display: flex;
+	width: 100%;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 4px;
+	margin: 0;
+}
+.menuDetail .btn-group .pay{
+	background: #555;
+	width: 50%;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    color: #fff;
+	cursor: pointer;
+}
+.menuDetail .btn-order{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	height: 48px;
+	background: #fa0050;
+    color: #fff;
+	cursor: pointer;
+}
+.count-group{
+	display: flex;
+}
+.count-group .quantity{
+    right: 45px;
+    top: 15px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 50px;
+    height: 30px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: center;
+}
+.count-group .minus,.plus{
+    right: 95px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    opacity: 1;
+	/* color: #ccc  */
+}
+
+.pay-load{
+	width: 80%;
+	margin: 0 auto;
+	text-align: left;
+	padding: 10px 0;
+}
+.pay-price{
+	position: relative;
+	left:10%;
+	top:5px;
+	display: flex;
+	justify-content: space-between;
+}
+.totalOrder{
+	text-align: right;
+	padding: 20px;
+	padding-bottom: 0px;
+}
+.review-list{
+	display:none;
+	position:absolute;
+	top:52px;
+	left:0;
+	width: 676px;
+	color:black;
+}
+.review-item{
+	padding:20px;	
+	border: 1px solid #d9d9d9;
+}
+.review-title{
+	display:flex;
+	justify-content:space-between;
+}
+.review-list img{
+	width:300px;
+}
+.review-content{
+	padding: 10px 0;
+}
+.info-list {
+	position:absolute;
+	display:none;
+	top: 60px;
+    left: 0%;
+    width: 642px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: none;
+    padding: 30px 16px 0 16px;
+}
+.info-item-title {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #999;
+    padding: 0 0 7px 0px;
+    margin-bottom: 18px;
+    background-size: 16px;
+}
+.info-item-title img{
+	width:15px;
+	padding-right:5px;
+}
+.info-text.ng-binding{
+	font-size: .8em;
+}
+.info-item{
+	margin-bottom: 50px;
+	color:black;
+}
+.info-item i {
+    color: #999;
+    font-style: normal;
+    display: table-cell;
+    width: 95px;
+    letter-spacing: -1px;
+}
+.info-item p{
+	display: flex;
+	padding: 10px 0;
+	font-size: .8em;
+}

@@ -1,0 +1,92 @@
+.login-wrapper{
+    width: 800px;
+    margin: 10px auto;
+}
+.login-title{
+    display: block;
+    background: url(https://www.yogiyo.co.kr/mobile/image/logo-yogiyo-2.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030) no-repeat;
+    background-size: 109px;
+    width: 109px;
+    height: 45px;
+    text-indent: -9999em;
+    overflow: hidden;
+    margin: 0 auto 17px auto;
+}
+.login_input{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    height: 25px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.login-list{
+    display: flex;
+    justify-content: space-between;
+    width: 830px;
+    margin-top: 10px;
+}
+input[type=checkbox]{
+    transform: scale(1.5);
+}
+.find-login a{
+    position: relative;
+    color:#999;
+    text-decoration: none;
+}
+.find-login a:first-child::before{
+    display: none;
+}
+.find-login a::before{
+    content: "";
+    width: 1px;
+    height: 20px;
+    background-color: #999;
+    position: absolute;
+    left:-2px;
+}
+.login-btn{
+    width: 830px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 0;
+    font-size: 15px;
+    color: #fff;
+    background-color: #ccc;
+    border: none;
+}
+.btn-group{
+    display: flex;
+    width: 830px;
+    column-gap: 10px;
+}
+.btn-group button{
+    width: 100%;
+    height: 40px;
+    border-radius: 0;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+    color: #333;
+    position: relative;
+    color: #999;
+    margin-top: 7px;
+}
+.btn-group button img{
+    position: absolute;
+    left:20%;
+    top: 0;
+    width: 25px;
+}
+.btn-group .kakao{
+    color: #3c1e20
+}
+.btn-group .kakao img{
+    position: absolute;
+    top: 8px;
+}
+.login-wrapper>img{
+    width: 830px;
+}

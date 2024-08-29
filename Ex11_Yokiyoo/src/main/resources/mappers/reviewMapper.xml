@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.ReviewDAO">
+	<insert id="insert" parameterType="ReviewDTO">
+		insert into review values(review_idx_seq.nextval,(SELECT COMPANY_IDX FROM MENU m WHERE MENU_IDX =#{menu_idx}),#{review_content},#{review_rate},sysdate,#{login_id},#{review_image})
+	</insert>
+	
+	<select id="select" parameterType="String" resultType="ReviewDTO">
+		select * from review where company_idx=(select company_idx from company where company_name=#{company_name})
+	</select>
+</mapper>  

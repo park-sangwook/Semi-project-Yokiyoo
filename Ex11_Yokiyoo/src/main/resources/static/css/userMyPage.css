@@ -1,0 +1,15 @@
+.user-wrapper{
+    width: 800px;
+    margin: 0 auto;
+}
+
+#form input{
+    width: 70%;
+    height: 45px;
+    margin: 5px 0;
+}
+.btn-group{
+    display: flex;
+    width: 561px;
+    column-gap: 25px;
+}

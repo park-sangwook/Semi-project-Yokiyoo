@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.MenuDAO">
+	<select id="selectByName" parameterType="String" resultType="MenuDTO">
+		select m.* from company c,menu m where c.company_idx=m.company_idx and c.company_name=#{name} 
+	</select>
+	<select id="selectMenuName" parameterType="String" resultType="MenuDTO">
+		select * from menu where menu_name=#{menu_name}
+	</select>
+	
+	<select id="selectMenuByLoginId" parameterType="String" resultType="MenuDTO">
+		select m.* from login l,menu m where l.company_idx = m.company_idx and l.login_id=#{login_id} order by menu_idx
+	</select>
+	
+	<update id="updateMenu" parameterType="MenuDTO">
+		update menu set menu_price = #{menu_price} where menu_idx=(select menu_idx from menu where menu_name=#{menu_name})
+	</update>
+	<insert id="insertMenu" parameterType="hashmap">
+		insert into menu values(menu_idx_seq.nextval,(select company_idx from company where company_name=#{company_name}),#{menu_name},#{menu_price},#{menu_image})
+	</insert>
+	<delete id="deleteMenu" parameterType="String">
+		delete from menu where menu_idx=(select menu_idx from menu where menu_name=#{menu_name})
+	</delete>
+</mapper>  

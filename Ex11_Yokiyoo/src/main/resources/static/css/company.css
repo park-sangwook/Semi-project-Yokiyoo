@@ -1,0 +1,142 @@
+.company-logo{
+	padding: 30px 100px;
+	background-image: url(https://www.yogiyo.co.kr/mobile/image/bg-top.png?v=1);
+	background-color: #3b2114;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 50px;
+}
+.restaurant-wrapper{
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+.restaurant-menu{
+	width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+.restaurant-menu .restaurant-item:first-child{
+	background: url(https://www.yogiyo.co.kr/mobile/image/sprite-icon.png?v=8cf7ee7…) no-repeat -73px 0;
+    border: 1px solid #d9d9d9;
+    background-size: 368px;
+    width: 42px;
+    text-indent: -999em;
+    height: 5px;
+	padding: 15px 0;
+}
+.restaurant-menu .restaurant-item{
+	position: relative;
+	font-size: 13px;
+	text-align: center;
+	list-style: none;
+	border-right: 0;
+	border-bottom: 0;
+	width: 100px;
+	padding: 20px 0;
+	cursor: pointer;
+}
+.restaurant-menu .restaurant-item:hover{
+	background-color: #333;
+	color: #fff;
+}
+.restaurant-menu .restaurant-item::before{
+	content: "";
+	width: 1px;
+	height: 14px;
+	background-color: #999;
+	position: absolute;
+	left:-1px;
+}
+.restaurant-menu .restaurant-item:first-child:before{
+	display: none;
+}
+
+
+
+
+
+main{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+main .list-option select{
+	position: absolute;
+	right:0;
+	background: #fff;
+    width: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.2;
+    border: 1px solid #d9d9d9;
+    border-radius: 0;
+    height: 36px;
+}
+.restaurant-list{
+	position: relative;
+	top: 50px;
+	padding-bottom: 50px;
+	display: flex;
+	flex-flow: row wrap;
+	width: 1100px;
+	margin: 0 auto;
+	justify-content: space-between;
+	row-gap: 10px;
+}
+
+.restaurant-list .list-item{
+	width: 48%;
+	height: 120px;
+	cursor:pointer;
+	display:flex;
+	column-gap:10px;
+}
+.item-img img{
+	width:100px;
+}
+.list-container{
+	width:100%;
+}
+.item-title{
+	font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 5px 0;
+}
+.stars{
+	display:flex;
+	font-size:12px;
+}
+.stars span{
+	margin : 5px 3px;
+}
+.restaurant-info{
+	display:flex;
+	flex-flow:row wrap;
+	width:200px;
+	margin-top:5px;
+}
+.restaurant-info li{
+	padding:3px 0;
+}
+.payment-methods{
+	color: #fa0050;
+	font-size:12px;
+}
+.min-price{
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    color: #808080;
+}
+.coupon-base{
+	font-size: 10px;
+    border: 1px solid #fa0050;
+    color: #fa0050 !important;
+    padding: 1px 4px;
+    box-sizing: border-box;
+}

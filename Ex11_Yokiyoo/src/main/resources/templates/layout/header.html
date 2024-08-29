@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+	<header>
+		<div class="header-wrapper">
+			<div class="header-title" onclick="location.href='/'">요기요</div>
+			<div class="header-btn">
+				<button id="login" onclick="location.href='/login'" th:if="${session.id==null}">로그인</button>
+				<button id="login" onclick="location.href='/logout'" th:if="${session.id!=null}">로그아웃</button>
+				<button id="pay" onclick="location.href='/mypage'">마이페이지</button>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

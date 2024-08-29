@@ -1,0 +1,103 @@
+.main-wrapper{
+    width: 1100px;
+    margin: 20px auto;
+}
+.default-info{
+    width: 1100px;
+    display: flex;
+    position: absolute;
+    margin-top: 35px;
+}
+.company-name{
+    width: 50%;
+    height: 50px;
+    border: 1px solid #ddd;
+}
+.company-logo{
+    width: 250px;
+}
+.company-name input{
+    width: 100%;
+    height: 100%;
+}
+.default-info img{
+    width: 160px;
+}
+.nav-link{
+    position: relative;
+}
+.menu-list{
+    position: absolute;
+    width: 500px;
+    left: 90px;
+    top: 220px;
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    flex-flow: row wrap;
+    row-gap: 35px;
+}
+.menu-list img{
+    width: 200px;
+    cursor: pointer;
+}
+.menu-info,.menu-insert{
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    width: 384px;
+    top:20%;
+    z-index: 2;
+    left:35%;
+}
+.menu-info-title{
+    font-size: 1.7em;
+    text-align: center;
+    border-bottom: 3px solid #ddd;
+}
+.menu-info-title img{
+    position: relative;
+    left: 100px;
+    width: 35px;
+    cursor: pointer;
+}
+.menu-info-price{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px 0;
+}
+.menu-info-btn{
+    display: flex;
+}
+.menu-info-btn button{
+    width: 100%;
+    height: 45px;
+}
+.hide-container{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top:9%;
+    z-index: 1;
+    background-color: rgba(1,1,1,.5);
+}
+
+#menu-insert{
+    position: absolute;
+    top: 150px;
+    display: none;
+}
+#preview{
+    width: 384px;
+}
+.menu-info-img img{
+	width:384px;
+}
+.order-wrapper{
+	position:absolute;
+	left:8%;
+	top:150px;
+	width:500px;
+	display:none;
+}

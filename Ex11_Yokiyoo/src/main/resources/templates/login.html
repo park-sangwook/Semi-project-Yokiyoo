@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.yogiyo.co.kr/mobile/image/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+	<script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios@1.7.5/dist/axios.min.js"></script>
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="/css/footer.css">
+	<script type="text/javascript" defer src="/js/login.js"></script>
+    <title>요기요</title>
+</head>
+<body>
+	<input type="hidden" id="msg" th:value="${msg}" />
+    <div th:replace="~{layout/header}"></div>
+    <div class="login-wrapper">
+        <div class="login-title"></div>
+        <form action="/loginOk" method="post">
+            <input type="text" name="login_id"placeholder="이메일 주소 입력(필수)" th:value="${id}" class="login_input">
+            <input type="password" name="login_password" placeholder="비밀번호 입력(필수)" class="login_input">
+            <div class="login-list">
+                <div><input type="checkbox" name="chk" id="chk"> <label for="chk">자동로그인</label></div>
+                <div class="find-login">
+                    <a href="findId">아이디 찾기</a>
+                    <a href="findPassword">비밀번호 찾기</a>
+                    <a href="/signUp">회원가입</a>
+                </div>
+            </div>
+            <button class="login-btn" type="submit">로그인</button>
+            <div class="btn-group">
+                <button class="naver" type="button"><img src="https://www.yogiyo.co.kr/mobile/image/ic_logo_naver.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030" alt="">네이버로 로그인</button>
+                <button class="kakao" onclick="kakaoLogin()" type="button"><img src="https://www.yogiyo.co.kr/mobile/image/ic_logo_kakao.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030" alt="">카카오로 로그인</button>
+            </div>
+        </form>
+        <img src="https://www.yogiyo.co.kr/mobile/image/signin_banner.png" alt="">
+    </div>
+    <div th:replace="~{layout/footer}"></div>
+</body>
+</html>

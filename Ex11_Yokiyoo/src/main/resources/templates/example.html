@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        html,
+        body {
+          position: relative;
+          height: 100%;
+        }
+    
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #000;
+          margin: 0;
+          padding: 0;
+          position: relative;
+        }
+    
+        .swiper {
+            position: absolute;
+          width: 50%;
+          height: 50%;
+        }
+    
+        .swiper-slide {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+    
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+        }
+    
+      </style>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-001.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-002.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-003.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-004.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-006.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-007.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-008.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://cdn.magloft.com/github/swiper/images/page-009.jpg" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-scrollbar"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          centeredSlides: false,
+          slidesPerGroupSkip: 1,
+          grabCursor: true,
+          keyboard: {
+            enabled: true,
+          },
+          breakpoints: {
+            769: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+          },
+          scrollbar: {
+            el: ".swiper-scrollbar",
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+</body>
+</html>

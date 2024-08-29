@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>마이페이지</title>
+<link rel="icon" type="image/x-icon" href="https://www.yogiyo.co.kr/mobile/image/favicon.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.7.4/dist/axios.min.js"></script>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/companyMyPage.css">
+<script defer src="/js/companyMyPage.js"></script>
+</head>
+<body>
+	<div th:replace="~{layout/header}"></div>
+	<input type="hidden" id="company_idx" th:value="${company.company_idx}" />
+	<div class="menu-info">
+		<div class="menu-info-title">메뉴정보 <img src="/images/cancel.svg" alt="123"></div>
+		<div class="menu-info-img"><img src="" alt=""></div>
+		
+		<form action="/menuUpdateOk" method="post" id="form">
+			<div class="menu-info-price"><input type="text" name="menu_price" id="menu_price"/></div>
+			<input type="hidden" name="menu_name" id="menu_name">
+			<div class="menu-info-btn">
+				<button type="submit" class="btn btn-outline-primary">저장</button>
+				<button type="button" class="btn btn-outline-success" onclick="deleteOk()">삭제</button>
+			</div>
+		</form>
+	</div>
+	<div class="menu-insert">
+		<div class="menu-info-title">메뉴정보 <img src="/images/cancel.svg" class="cancel" alt="123"></div>
+		<form action="/menuInsertOk" method="post" enctype="multipart/form-data">
+			<input type="file" id="fileInput" name="menu_image" accept="image/*"> <br>
+			<img id="preview" src="" alt="미리보기" style="display:none;">
+			<input type="hidden" name="company_name" th:value="${company.company_name}" />
+			<div class="menu-info-price"><input type="text" name="menu_name" id="menu_name" placeholder="메뉴이름"/></div>
+			<div class="menu-info-price"><input type="text" name="menu_price" id="menu_price" placeholder="가격"/></div>
+			<div class="menu-info-btn">
+				<button type="submit" class="btn btn-outline-primary">추가</button>
+			</div>
+		</form>
+	</div>
+	<div class="hide-container"></div>
+	<div class="main-wrapper">
+		<ul class="nav nav-tabs">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="javascript:void(0)">기본정보</a>
+				<form action="/companyUpdateOk" method="post">
+					<div class="default-info">
+						<div class="company-logo">
+							<img th:src="${company.company_logo}" alt="" id="company-logo"> <br>
+							<input type="file" >
+						</div>
+						<div class="company-name"><input type="text" name="company_name" id="" th:value="${company.company_name}"></div>
+					</div>
+				</form>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="javascript:void(0)">메뉴정보</a>
+				
+				<div class="menu-list" style="width: 750px;">
+					<div class="menu-item" th:each="vo:${menu}">
+						<img th:src="${vo.menu_image}" alt="">
+						<div class="menu-title">[[${vo.menu_name}]]</div>
+						<div class="menu-price">[[${#numbers.formatInteger(vo.menu_price,3,'COMMA')}]]</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-outline-primary" id="menu-insert" onclick="menuInsert()">메뉴추가</button>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="javascript:void(0)">판매내역</a>
+				<div class="order-wrapper">
+					<div id="chart_div"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- <div th:replace="~{layout/footer}"></div> -->
+</body>
+</html>

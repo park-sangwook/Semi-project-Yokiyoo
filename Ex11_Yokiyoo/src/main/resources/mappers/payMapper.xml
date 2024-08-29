@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PayDAO">
+	<select id="insert" parameterType="PayDTO">
+		insert into pay values(pay_idx_seq.nextval,(select menu_idx from menu where menu_name=#{menu_name}),#{pay_count},#{login_id})
+	</select>
+	
+	<select id="selectOrderedMenu" parameterType="int" resultType="PayDTO">
+		SELECT m.*,p.PAY_COUNT ,p.login_id
+		FROM COMPANY c ,menu m,pay p WHERE c.COMPANY_IDX =m.COMPANY_IDX AND p.MENU_IDX=m.MENU_IDX and c.COMPANY_IDX = #{company_idx}
+	</select>
+	
+	
+	
+	<select id="selectMenuByUser" parameterType="String" resultType="MenuDTO">
+		SELECT m.* FROM PAY p,login l,menu m WHERE l.LOGIN_ID = p.LOGIN_ID AND m.MENU_IDX = p.MENU_IDX and l.login_id=#{login_id}
+	</select>
+</mapper>  

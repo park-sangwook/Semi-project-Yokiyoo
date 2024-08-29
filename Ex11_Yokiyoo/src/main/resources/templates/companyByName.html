@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.yogiyo.co.kr/mobile/image/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/axios@1.7.4/dist/axios.min.js"></script>
+	<script type="text/javascript" src="/webjars/axios/1.7.4/dist/axios.min.js"></script>
+	<script type="text/javascript" src="/webjars/jquery/3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/companyByName.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script defer src="/js/companyByName.js"></script>
+    <title>요기요</title>
+</head>
+<body>
+    <div th:replace="~{layout/header}"></div>
+    <div class="company-logo"></div>
+    <div class="restaurant-wrapper">
+        <div class="restaurant-menu">
+            <div class="restaurant-item"></div>
+            <div class="restaurant-item">전체보기</div>
+            <div class="restaurant-item">1인분 주문</div>
+            <div class="restaurant-item">프랜차이즈</div>
+            <div class="restaurant-item">치킨</div>
+            <div class="restaurant-item">피자/양식</div>
+            <div class="restaurant-item">중국집</div>
+            <div class="restaurant-item">한식</div>
+            <div class="restaurant-item">일식/돈까스</div>
+            <div class="restaurant-item">족발/보쌈</div>
+            <div class="restaurant-item">야식</div>
+            <div class="restaurant-item">분식</div>
+            <div class="restaurant-item">카페/디저트</div>
+            <div class="restaurant-item">편의점/마트</div>
+        </div>
+    </div>
+    <div class="menuDetail">
+        <div class="menu-title">메뉴상세 <img src="/images/cancel.svg" alt=""></div>
+        <div class="menu-content"></div>
+        <div class="menu-text"></div>
+        <div class="menu-price"></div>
+        <div class="menu-count"></div>
+        <div class="total"></div>
+        <div class="btn-group">
+            <div class="pay">주문표에 추가</div>
+            <div class="btn-order" onclick="orderCheck()">주문하기</div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="restaurant-info">
+            <div class="restaurant-title">[[${name}]]</div>
+            <div class="info-group">
+                <img src="https://rev-static.yogiyo.co.kr/restaurant_logos/20231109172308330723_%EC%97%85%EC%B2%B4%EC%9E%90%EC%B2%B4_20231109_559413_%ED%95%9C%EC%8B%9D%EB%82%98%EB%9D%BC-%EC%88%98%EC%9B%90%EB%B3%B8%EC%A0%90_%EA%B0%80%EA%B2%8C%EB%A1%9C%EA%B3%A0_300x300.jpg" alt="">
+            </div>
+            <div class="alarm"><img src="https://www.yogiyo.co.kr/mobile/image/ic_info_notice@3x.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030" alt="">
+            <span>사장님 알림
+            ❤️❤️특별한500원의 행복 진행중입니다 ~ ❤️❤️ 🎉🎉 주문시 확인해주세요 🎉🎉
+            </span>
+            </div>
+            <ul class="menu-list">
+                <li class="selected">
+                    <h2>메뉴</h2>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide" th:each="vo:${menu}">
+                            <div class="item"><img th:src="${vo.menu_image}" alt=""><div><h3>[[${vo.menu_name}]]</h3><h4>[[${#numbers.formatInteger(vo.menu_price,3,'COMMA')}]] 원</h4></div></div>
+                          </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-scrollbar"></div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                </li>
+                <li>
+                    <h2>클린리뷰</h2>
+                    <div class="review-list">
+                    	<div class="review-item" th:each="vo:${review}">
+                    		<div class="review-title"><div>[[${vo.login_id}]]님</div></div>
+                            <div class="review-rate">[[${vo.review_rate}]]</div>                        
+                    		<div><img th:src="@{|/review_images/${vo.review_image}|}"/></div>
+                    		<div class="review-content">[[${vo.review_content}]]</div>
+                    	</div>
+                    </div>
+                </li>
+                <li>
+                    <h2>정보</h2>
+                    <div class="info-list">
+                    	<div class="info-item">
+	                    	<div class="info-item-title"><img src="https://www.yogiyo.co.kr/mobile/image/ic_owner_notice@3x.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030"/>사장님 알림</div>
+	                    	<div class="info-text ng-binding">❤️❤️상단 (❤️하트) 찜 꾸욱~ 소중한 리뷰 작성❤️❤️<br><br>✔️1️⃣~3️⃣번중 택1 요청사항 남겨주세용 (위사진 참고)<br><br>— 별5개⭐⭐⭐⭐⭐ 주시는 건 저희에게 큰 힘이 됩니다.   😉감사합니다 (,,ᴗ ᴗ,,) ⁾⁾  <br>— 늘 88제육으로 힐링 행복 가득하시길 원합니다💕<br><br><br>✔️천연재료 많이 들어간 양념장을 사용하고 있습니다<br><br>✔️전 메뉴 “생”양배추 토핑 맛보기 조금 들어갑니다<br><br>✔️양배추 토핑 추가시 &gt;&gt;&gt; ”생”양배추 고기아래 토핑<br><br>✔️당일 이른 아침 식재료를 받아 정직하게 요리하고 있습니다💕<br><br>✔️항상 우리 가족이 먹는다는 생각을 가지고 정성으로 요리하겠습니다💕<br><br>✔️불편사항 발생시 매장으로 바로 연락주시면 신속하게 바로 해결하겠습니다💕<br><br>✔️천연재료 많이 들어간 양념장을 사용하고 있기에 기본단계 맵기, 단맛 살짝 변동있습니다😉<br>     [ ※기본 단계 살짝 매콤합니다🔥]<br><br>✔️매장 위생관리 자신 있기에 포장 방문시 믿음 팍팍‼️ 드립니다👀</div>
+                    	</div>
+                    	<div class="info-item">
+	                    	<div class="info-item-title"><img src="https://www.yogiyo.co.kr/mobile/image/ic_owner_notice@3x.png?v=8cf7ee7f4a3600fe71bc1e308c1a52623b130030"/>업체정보</div>
+	                    	<p><i>영업시간</i> <span class="tc ng-binding">09:00 - 02:50</span></p>
+	                    	<p class=""><i>전화번호</i> <span class="tc ng-binding">050702877546 (요기요 제공 번호)</span></p>
+	                    	<p class=""><i>주소</i> <span class="tc ng-binding">경기도 수원시 팔달구 인계동 1008-8 1층 104호</span></p>
+	                    	<p class=""><i>부가정보</i> <span class="cesco info-icon5 tc">세스코멤버스 사업장</span></p>
+                    	</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pay-info">
+            <div class="sub-title">주문표</div>
+            <div class="sub-body">주문표에 담긴 메뉴가 없습니다.</div>
+            <button class="pay-btn" onclick="payCheck()">주문하기</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    <div th:replace="~{layout/footer}"></div>
+</body>
+</html>
